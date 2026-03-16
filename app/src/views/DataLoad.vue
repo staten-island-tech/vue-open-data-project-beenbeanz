@@ -1,6 +1,11 @@
 <template>
-    <div>
-
+    <div class="container">
+        <AnimalCard
+            v-for="(animal, index) in animals"
+            :key="animal.species_description"
+            :animal="animal"
+            :index="index + 1"
+        />
     </div>
 </template>
 
@@ -11,7 +16,7 @@ import AnimalCard from '@/components/AnimalCard.vue';
 const animals = ref([])
 async function getData(){
     try{
-        const response = await fetch('https://pokeapi.co/api/v2/pokemon?limit=500&offset=0')
+        const response = await fetch('https://data.cityofnewyork.us/resource/fuhs-xmg2.json')
         const data = await response.json();
         animals.value = data;
     }
@@ -26,5 +31,14 @@ onMounted(() => {
 </script>
 
 <style scoped>
-
+    .container {
+        width: 80vw;
+        margin: 30px auto;
+        gap: 50px;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+    }
 </style>
