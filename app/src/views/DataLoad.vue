@@ -1,24 +1,23 @@
 <template>
     <div class="container">
-        <AnimalCard
-            v-for="(animal, index) in animals"
-            :key="animal.species_description"
-            :animal="animal"
-            :index="index + 1"
+        <DogCard
+            v-for="dog in dogs"
+            :key="dog.id"
+            :dog="dog"
         />
     </div>
 </template>
 
 <script setup>
 import { ref, onMounted } from 'vue';
-import AnimalCard from '@/components/AnimalCard.vue';
+import DogCard from '@/components/DogCard.vue';
 
-const animals = ref([])
+const dogs = ref([])
 async function getData(){
     try{
-        const response = await fetch('https://data.cityofnewyork.us/resource/fuhs-xmg2.json')
+        const response = await fetch("https://data.cityofnewyork.us/api/v3/views/rsgh-akpg/query.json?pageNumber=1&pageSize=50&app_token=NsvMFBdPA7R6YnKsb2BiHNbyE")
         const data = await response.json();
-        animals.value = data;
+        dogs.value = data;
     }
     catch(err){
         console.log(err)

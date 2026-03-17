@@ -1,7 +1,7 @@
 <template>
     <div>
-        <h2>{{pokemon.name}}</h2>
-        <h2>{{ pokemon.types }}</h2>
+        <h2>{{dog.breed}}</h2>
+        <h2>{{ dog.uniqueid }}</h2>
     </div>
 </template>
 
