@@ -2,6 +2,7 @@
     <router-link :to="dogPath">
         <h3>{{ dog.borough }}</h3>
         <h3>{{ dog.breed }}</h3>
+        <h3>{{ dog[":id"] }}</h3>
     </router-link>
 </template>
 
@@ -16,7 +17,7 @@
     })
 
     const dogPath = computed(() => {
-        return `/dog/${props.dog.uniqueid}`
+        return `/dog/${props.dog[":id"]}`
     })
 </script>
 
