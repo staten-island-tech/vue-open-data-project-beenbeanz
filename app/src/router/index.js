@@ -1,4 +1,5 @@
 import DataLoad from '@/views/DataLoad.vue'
+import DogData from '@/views/DogData.vue'
 import { createRouter, createWebHistory } from 'vue-router'
 
 const router = createRouter({
@@ -8,6 +9,11 @@ const router = createRouter({
       path: '/',
       name: 'home',
       component: DataLoad
+    },
+    {
+      path: '/dog/:id',
+      name: 'DogData',
+      component: DogData
     }
   ],
 })

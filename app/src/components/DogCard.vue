@@ -1,8 +1,9 @@
 <template>
     <router-link :to="dogPath">
         <h3>{{ dog.borough }}</h3>
-        <h3>{{ dog.breed }}</h3>
+        <h3>{{ dog.breed === "UNKNOWN" ? '' : dog.breed }}</h3>
         <h3>{{ dog[":id"] }}</h3>
+        <h3>{{ dogPath }}</h3>
     </router-link>
 </template>
 

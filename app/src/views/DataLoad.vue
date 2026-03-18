@@ -15,7 +15,7 @@ import DogCard from '@/components/DogCard.vue';
 const dogs = ref([])
 async function getData(){
     try{
-        const response = await fetch("https://data.cityofnewyork.us/api/v3/views/rsgh-akpg/query.json?pageNumber=1&pageSize=50&app_token=NsvMFBdPA7R6YnKsb2BiHNbyE")
+        const response = await fetch("https://data.cityofnewyork.us/api/v3/views/rsgh-akpg/query.json?pageNumber=1&pageSize=10&app_token=NsvMFBdPA7R6YnKsb2BiHNbyE")
         const data = await response.json();
         dogs.value = data;
     }
