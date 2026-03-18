@@ -6,11 +6,55 @@
             :dog="dog"
         />
     </div>
+<D3PieChart :config="chart_config" :datum="chart_data"></D3PieChart>
+
 </template>
 
 <script setup>
 import { ref, onMounted } from 'vue';
 import DogCard from '@/components/DogCard.vue';
+import { D3PieChart } from 'vue-d3-charts';
+
+const chart_data = [{
+  name: "Lorem",
+  total: 30
+},{
+  name: "Ipsum",
+  total: 21
+},{
+  name: "Dolor",
+  total: 20
+}]
+
+const chart_config = {
+  key: false,
+  radius: {
+    inner: false,
+    outter: false,
+    padding: 0,
+    round: 0,
+  },
+  value: false,
+  color: {
+    key: false,
+    keys: false,
+    scheme: false,
+    current: "#1f77b4",
+    default: "#AAA",
+    axis: "#000",
+  },
+  currentKey: false,
+  margin: {
+    top: 20,
+    right: 20,
+    bottom: 20,
+    left: 20,
+  },
+  transition: {
+    duration: 350,
+    ease: "easeLinear",
+  },
+}
 
 const dogs = ref([])
 async function getData(){

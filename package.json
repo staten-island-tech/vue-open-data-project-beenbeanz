@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "vue-d3-charts": "^0.2.8"
+  }
+}
